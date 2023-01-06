@@ -1,0 +1,20 @@
+<!--users/templates/registration/login.html-->
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Login: ----->  </h2>
+
+
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Login">
+</form>
+
+{% comment %}   we ues the two line  when we use name space {% endcomment %}
+{% comment %} <a href="{% url 'dwitter:password_reset' %}">Reset password</a>
+<a href="{% url 'dwitter:register' %}">Register</a> {% endcomment %}
+
+<a href="{% url 'password_reset' %}">Reset password</a>
+<a href="{% url 'register' %}">Register</a>
+{% endblock %}
